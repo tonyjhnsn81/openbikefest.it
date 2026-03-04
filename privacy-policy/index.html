@@ -10,94 +10,106 @@
     {}
     <script src="https://cdn.tailwindcss.com"></script>
     <script src="https://unpkg.com/lucide@latest"></script>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
     <style>
         body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
-        article h1{font-size:2.25rem;font-weight:900;margin:1.5rem 0 1rem;color:#0f172a;line-height:1.2;}
-        article h2{font-size:1.75rem;font-weight:700;margin:2rem 0 .75rem;color:#0f172a;border-left:4px solid #facc15;padding-left:1rem}
-        article h3{font-size:1.5rem;font-weight:600;margin:1.5rem 0 .5rem;color:#1e293b}
-        article p{margin-bottom:1.25rem;line-height:1.8;color:#334155}
-        article ul,article ol{padding-left:1.5rem;margin-bottom:1.25rem}
-        article li{margin-bottom:.5rem;line-height:1.7}
-        article table{width:100%;border-collapse:collapse;margin:1.5rem 0;background:white;border-radius:8px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.1)}
+        article h1{font-size:2rem;font-weight:800;margin:1.5rem 0 1rem;color:#0f172a}
+        article h2{font-size:1.5rem;font-weight:700;margin:2rem 0 .75rem;color:#0f172a;border-left:4px solid #ef4444;padding-left:1rem}
+        article h3{font-size:1.25rem;font-weight:600;margin:1.5rem 0 .5rem;color:#1e293b}
+        article p{margin-bottom:1rem;line-height:1.75;color:#334155}
+        article ul,article ol{padding-left:1.5rem;margin-bottom:1rem}
+        article li{margin-bottom:.5rem;line-height:1.6}
+        article table{width:100%;border-collapse:collapse;margin:1.5rem 0}
         article th{background:#f1f5f9;font-weight:700;padding:.75rem;border:1px solid #e2e8f0;text-align:left}
         article td{padding:.75rem;border:1px solid #e2e8f0}
-        article a{color:#2563eb;text-decoration:underline}
-        article figure img{border-radius:12px;width:100%;height:auto;margin:1.5rem 0}
-        article figcaption{font-size:.875rem;color:#94a3bb;text-align:center;margin-top:.5rem}
-        .hero-gradient { background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1596838132731-dd96a352d3ee?q=80&w=2070&auto=format&fit=crop'); background-size: cover; background-position: center; }
-        .card-shadow { box-shadow: 0 4px 20px -2px rgba(0,0,0,0.1); }
+        article a{color:#ef4444;text-decoration:underline}
+        article figure img{border-radius:8px}
+        article figcaption{font-size:.875rem;color:#94a3bb;margin-top:.5rem}
+
+        .hero-gradient { background: linear-gradient(180deg, #1e293b 0%, #0f172a 100%); }
+        .card-shadow { box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1); }
+        .badge-number { position: absolute; top: -10px; left: -10px; background: #ef4444; color: white; width: 24px; height: 24px; border-radius: 4px; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 0.75rem; z-index: 10; }
     </style>
-    {{{schema_json}}}
+    <script type="application/ld+json">{{schema_json}}</script>
 </head>
-<body class="text-slate-900">
+<body class="text-slate-800">
 
-    <!-- Top Navigation -->
-    <nav class="bg-white border-b border-slate-200 sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-16 items-center">
-                <div class="flex items-center gap-2">
-                    <div class="bg-yellow-400 p-2 rounded-lg">
-                        <i data-lucide="bike" class="w-6 h-6 text-slate-900"></i>
-                    </div>
-                    <span class="font-black text-xl tracking-tighter uppercase">OpenBike<span class="text-yellow-500">Fest</span></span>
+    <!-- Header -->
+    <header class="bg-white border-b sticky top-0 z-50">
+        <div class="container mx-auto px-4 h-16 flex items-center justify-between">
+            <div class="flex items-center gap-2">
+                <div class="bg-red-600 p-1.5 rounded">
+                    <i data-lucide="bike" class="text-white w-6 h-6"></i>
                 </div>
-                
-                <div class="hidden md:flex space-x-8 text-sm font-semibold text-slate-600">
-                    <a href="#" class="hover:text-yellow-500 transition-colors">Casinò Online</a>
-                    <a href="#" class="hover:text-yellow-500 transition-colors">Senza Documenti</a>
-                    <a href="#" class="hover:text-yellow-500 transition-colors">Bonus</a>
-                    <a href="#" class="hover:text-yellow-500 transition-colors">Recensioni</a>
-                </div>
-
-                <div class="md:hidden">
-                    <button id="mobile-menu-button" class="p-2 text-slate-600">
-                        <i data-lucide="menu" class="w-6 h-6"></i>
-                    </button>
-                </div>
+                <span class="text-2xl font-black tracking-tighter text-slate-900">OPENBIKE<span class="text-red-600">FEST</span></span>
             </div>
-        </div>
-        <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 px-4 py-4 space-y-3">
-            <a href="#" class="block font-semibold">Casinò Online</a>
-            <a href="#" class="block font-semibold">Senza Documenti</a>
-            <a href="#" class="block font-semibold">Bonus</a>
-            <a href="#" class="block font-semibold">Recensioni</a>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <header class="hero-gradient py-16 md:py-24 text-center text-white">
-        <div class="max-w-4xl mx-auto px-4">
-            <h1 class="text-3xl md:text-5xl font-black mb-6 uppercase tracking-tight">
-                Casinò Senza Documenti: Gioca Subito Senza Invio di Documenti
-            </h1>
-            <p class="text-lg md:text-xl text-slate-200 max-w-2xl mx-auto">
-                I migliori siti di gioco online sicuri con prelievi immediati e registrazione rapida senza burocrazia nel 2026.
-            </p>
+            <nav class="hidden md:flex items-center gap-6 text-sm font-bold uppercase tracking-wide text-slate-600">
+                <a href="#" class="hover:text-red-600 transition-colors">Casino No AAMS</a>
+                <a href="#" class="hover:text-red-600 transition-colors">Senza Documenti</a>
+                <a href="#" class="hover:text-red-600 transition-colors">Pagamenti Veloci</a>
+                <a href="#" class="hover:text-red-600 transition-colors">Licenze Estere</a>
+            </nav>
+
+            <button id="mobile-menu-btn" class="md:hidden p-2">
+                <i data-lucide="menu" class="w-6 h-6"></i>
+            </button>
         </div>
     </header>
 
-    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <!-- Ranking Section -->
-        <section class="mb-16">
-            <div class="flex items-center gap-2 mb-8">
-                <i data-lucide="list-ordered" class="text-yellow-500 w-8 h-8"></i>
-                <h2 class="text-2xl font-bold">I Migliori Casinò Online del {{year}}</h2>
-            </div>
-            
-            <div class="space-y-4">
-                
-            </div>
-        </section>
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="hidden fixed inset-0 bg-white z-40 pt-20 px-6">
+        <nav class="flex flex-col gap-6 text-xl font-bold uppercase">
+            <a href="#" class="border-b pb-2">Casino No AAMS</a>
+            <a href="#" class="border-b pb-2">Senza Documenti</a>
+            <a href="#" class="border-b pb-2">Pagamenti Veloci</a>
+            <a href="#" class="border-b pb-2">Licenze Estere</a>
+        </nav>
+    </div>
 
-        <!-- Content Section -->
-        <section class="grid grid-cols-1 lg:grid-cols-3 gap-12">
-            <div class="lg:col-span-2">
-                <article class="bg-white p-6 md:p-10 rounded-2xl shadow-sm border border-slate-100">
-                    <h1>Informativa sulla Privacy</h1>
+    <!-- Hero Section -->
+    <section class="hero-gradient py-12 md:py-20 text-white relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10">
+            <img src="https://images.unsplash.com/photo-1596838132731-3301c3fd4317?auto=format&fit=crop&q=80&w=2000" alt="Casino Background" class="w-full h-full object-cover">
+        </div>
+        <div class="container mx-auto px-4 relative z-10">
+            <div class="max-w-3xl">
+                <nav class="flex text-xs uppercase tracking-widest gap-2 mb-4 text-slate-400">
+                    <a href="#">Home</a> <span>/</span> <a href="#">Casino</a> <span>/</span> <span class="text-white">Senza Documenti</span>
+                </nav>
+                <h1 class="text-4xl md:text-6xl font-black mb-6 leading-tight">I Migliori Casino Senza Documenti e Verifica a Marzo {{year}}</h1>
+                <p class="text-lg text-slate-300 mb-8">Scopri la selezione curata dei siti di gioco più sicuri che non richiedono l'invio di documenti per iniziare a giocare e prelevare le tue vincite istantaneamente.</p>
+                <div class="flex items-center gap-4 text-sm">
+                    <span class="flex items-center gap-1"><i data-lucide="check-circle" class="w-4 h-4 text-green-500"></i> Verifica Istantanea</span>
+                    <span class="flex items-center gap-1"><i data-lucide="shield-check" class="w-4 h-4 text-green-500"></i> 100% Sicuro</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content Area -->
+    <main class="container mx-auto px-4 py-8 md:py-12">
+        <div class="flex flex-col lg:flex-row gap-8">
+            
+            <div class="w-full">
+                <!-- Table Header Labels (Desktop) -->
+                <div class="hidden md:grid grid-cols-12 gap-4 px-6 py-3 bg-slate-100 rounded-t-lg border-x border-t text-[10px] font-bold uppercase text-slate-500">
+                    <div class="col-span-3">Casino Senza Documenti</div>
+                    <div class="col-span-2">Bonus Benvenuto</div>
+                    <div class="col-span-3">Punti Principali</div>
+                    <div class="col-span-2 text-center">Rating</div>
+                    <div class="col-span-2 text-right">Link Sicuro</div>
+                </div>
+
+                <!-- Brand Cards Container -->
+                <div class="flex flex-col gap-4 mb-12">
+                    
+                </div>
+
+                <!-- Article Content -->
+                <div class="bg-white p-6 md:p-10 rounded-xl border border-slate-200">
+                    <article>
+                        <h1>Informativa sulla Privacy</h1>
 <p>Ultimo aggiornamento: 2026</p>
 <p>La presente Informativa sulla Privacy descrive come openbikefest.it ("noi", "ci" o "nostro") raccoglie, utilizza e condivide informazioni su di te quando utilizzi il nostro sito web https://openbikefest.it (il "Sito").</p>
 
@@ -136,102 +148,37 @@
 
 <h2>6. Contattaci</h2>
 <p>Per domande o commenti sulla presente Informativa sulla Privacy, contattaci all'indirizzo: <a href="mailto:info@openbikefest.it">info@openbikefest.it</a></p>
-                </article>
+                    </article>
+                </div>
             </div>
 
-            <!-- Sidebar -->
-            <aside class="space-y-8">
-                <div class="bg-slate-900 text-white p-6 rounded-2xl">
-                    <h3 class="text-xl font-bold mb-4 flex items-center gap-2">
-                        <i data-lucide="shield-check" class="text-yellow-400"></i>
-                        Gioco Responsabile
-                    </h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-4">
-                        Il gioco d'azzardo è riservato ai maggiorenni e può causare dipendenza patologica. Gioca con moderazione.
-                    </p>
-                    <a href="#" class="text-yellow-400 font-bold text-sm underline">Scopri di più</a>
-                </div>
-
-                <div class="bg-white p-6 rounded-2xl border border-slate-200">
-                    <h3 class="text-lg font-bold mb-4">Popolari questo mese</h3>
-                    <div class="space-y-4">
-                        <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 bg-slate-100 rounded flex items-center justify-center font-bold text-slate-400">1</div>
-                            <div>
-                                <div class="font-bold">Wild Tokyo</div>
-                                <div class="text-xs text-slate-500">Bonus 250% fino a €1000</div>
-                            </div>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <div class="w-12 h-12 bg-slate-100 rounded flex items-center justify-center font-bold text-slate-400">2</div>
-                            <div>
-                                <div class="font-bold">Casoola</div>
-                                <div class="text-xs text-slate-500">100% fino a €1500</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </aside>
-        </section>
+        </div>
     </main>
 
     <!-- Footer -->
     <footer class="bg-slate-900 text-slate-400 py-12 border-t border-slate-800">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-                <div class="md:col-span-2">
-                    <div class="flex items-center gap-2 text-white mb-6">
-                        <i data-lucide="bike" class="w-8 h-8 text-yellow-500"></i>
-                        <span class="font-black text-2xl tracking-tighter uppercase">OpenBike<span class="text-yellow-500">Fest</span></span>
-                    </div>
-                    <p class="max-w-md">
-                        La tua guida definitiva ai casinò online più sicuri e veloci in Italia. Analizziamo e confrontiamo le migliori piattaforme senza invio di documenti per garantirti un'esperienza di gioco fluida.
-                    </p>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4">Link Utili</h4>
-                    <ul class="space-y-2 text-sm">
-                        <li><a href="/about/" class="hover:text-yellow-400">Chi Siamo</a></li>
-                        <li><a href="/contacts/" class="hover:text-yellow-400">Contatti</a></li>
-                        <li><a href="/privacy-policy/" class="hover:text-yellow-400">Privacy Policy</a></li>
-                        <li><a href="/cookie-policy/" class="hover:text-yellow-400">Cookie Policy</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-white font-bold mb-4">Seguici</h4>
-                    <div class="flex gap-4">
-                        <a href="#" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-yellow-500 hover:text-slate-900 transition-all">
-                            <i data-lucide="facebook" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-yellow-500 hover:text-slate-900 transition-all">
-                            <i data-lucide="twitter" class="w-5 h-5"></i>
-                        </a>
-                        <a href="#" class="w-10 h-10 bg-slate-800 rounded-full flex items-center justify-center hover:bg-yellow-500 hover:text-slate-900 transition-all">
-                            <i data-lucide="instagram" class="w-5 h-5"></i>
-                        </a>
-                    </div>
-                </div>
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex justify-center gap-4 mb-8">
+                <i data-lucide="twitter" class="w-5 h-5"></i>
+                <i data-lucide="facebook" class="w-5 h-5"></i>
+                <i data-lucide="instagram" class="w-5 h-5"></i>
+                <i data-lucide="youtube" class="w-5 h-5"></i>
             </div>
-            <div class="pt-8 border-t border-slate-800 text-center text-xs">
-                <p>&copy; {{year}} OpenBikeFest.it - Tutti i diritti riservati. Il gioco è vietato ai minori di 18 anni.</p>
+            <p class="text-sm mb-4">&copy; {{year}} OpenBikeFest.it - Tutti i diritti riservati. Il gioco è vietato ai minori di 18 anni e può causare dipendenza patologica.</p>
+            <div class="flex flex-wrap justify-center gap-6 text-xs uppercase tracking-widest">
+                <a href="/about/" class="hover:text-white">Chi Siamo</a>
+                <a href="/contacts/" class="hover:text-white">Contatti</a>
+                <a href="/privacy-policy/" class="hover:text-white">Privacy Policy</a>
+                <a href="/cookie-policy/" class="hover:text-white">Cookie Policy</a>
             </div>
         </div>
     </footer>
 
     <!-- Cookie Banner -->
-    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-slate-900 text-white p-4 z-[100] transform translate-y-0 transition-transform duration-500">
-        <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
-            <p class="text-sm text-slate-300 text-center md:text-left">
-                Utilizziamo i cookie per migliorare la tua esperienza sul nostro sito. Continuando la navigazione accetti la nostra cookie policy.
-            </p>
-            <div class="flex gap-4">
-                <button onclick="closeCookieBanner()" class="px-6 py-2 bg-yellow-500 text-slate-900 font-bold rounded-lg text-sm hover:bg-yellow-400 transition-colors">
-                    Accetta
-                </button>
-                <button onclick="closeCookieBanner()" class="px-6 py-2 bg-slate-700 text-white font-bold rounded-lg text-sm hover:bg-slate-600 transition-colors">
-                    Rifiuta
-                </button>
-            </div>
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-slate-900/95 backdrop-blur-md text-white p-4 z-[100] border-t border-slate-700">
+        <div class="container mx-auto flex flex-col md:flex-row items-center justify-between gap-4">
+            <p class="text-sm text-slate-300">Utilizziamo i cookie per assicurarti la migliore esperienza sul nostro sito. Continuando la navigazione acconsenti all'uso dei cookie. <a href="#" class="underline">Leggi di più</a>.</p>
+            <button onclick="closeCookieBanner()" class="bg-red-600 hover:bg-red-700 text-white px-6 py-2 rounded font-bold transition-colors whitespace-nowrap">Accetto</button>
         </div>
     </div>
 
@@ -240,18 +187,16 @@
         lucide.createIcons();
 
         // Mobile Menu Toggle
-        const menuBtn = document.getElementById('mobile-menu-button');
+        const menuBtn = document.getElementById('mobile-menu-btn');
         const mobileMenu = document.getElementById('mobile-menu');
         menuBtn.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+            document.body.classList.toggle('overflow-hidden');
         });
 
-        // Cookie Banner Functionality
+        // Cookie Banner Close
         function closeCookieBanner() {
-            document.getElementById('cookie-banner').style.transform = 'translateY(100%)';
-            setTimeout(() => {
-                document.getElementById('cookie-banner').classList.add('hidden');
-            }, 500);
+            document.getElementById('cookie-banner').style.display = 'none';
         }
     </script>
 </body>
